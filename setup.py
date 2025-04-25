@@ -6,19 +6,21 @@ import sys
 
 def get_version():
     try:
-        latest_tag = (
-            subprocess.check_output(["git", "describe", "--tags", "--abbrev=0"])
-            .strip()
-            .decode()
-        )
+        # latest_tag = (
+        #     subprocess.check_output(["git", "describe", "--tags", "--abbrev=0"])
+        #     .strip()
+        #     .decode()
+        # )
+        latest_tag = 0
 
-        commit_count = (
-            subprocess.check_output(
-                ["git", "rev-list", f"{latest_tag}..HEAD", "--count"]
-            )
-            .strip()
-            .decode()
-        )
+        # commit_count = (
+        #     subprocess.check_output(
+        #         ["git", "rev-list", f"{latest_tag}..HEAD", "--count"]
+        #     )
+        #     .strip()
+        #     .decode()
+        # )
+        commit_count = 0
 
         return f"{latest_tag}.{commit_count}"
     except subprocess.CalledProcessError:
